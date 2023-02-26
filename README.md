@@ -15,24 +15,73 @@ This is a very simple and useful button widget, you can use this button for any 
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
+![](https://github.com/Umidjon-18/hope_button/blob/main/example/example_project/assets/sample.gif)
 TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder.
 
 ```dart
-const like = 'sample';
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: HopeButton(
+          width: 250,
+          height: 70,
+          onTap: () {
+            print("Tapped");
+          },
+          title: const Text(
+            "Test Button",
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          borderGradient: const LinearGradient(
+            colors: [
+              Colors.blue,
+              Colors.red,
+              Colors.green,
+              Colors.yellow,
+            ],
+          ),
+          borderWidth: 5,
+          borderRadius: 10,
+        ),
+      ),
+    );
+  }
+}
 ```
 
 ## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+These properties are available 
+```dart
+HopeButton({
+    super.key,
+    required this.width,
+    required this.height,
+    required this.onTap,
+    required this.title,
+    this.bgColor = Colors.white,
+    this.borderColor,
+    this.borderGradient,
+    this.borderRadius = 0,
+    this.borderWidth = 0,
+    this.childrenAlignment = MainAxisAlignment.spaceEvenly,
+    this.leading,
+    this.margin = EdgeInsets.zero,
+    this.padding = EdgeInsets.zero,
+    this.trailing,
+  });
+```
