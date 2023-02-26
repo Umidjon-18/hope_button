@@ -16,8 +16,7 @@ This is a very simple and useful button widget, you can use this button for any 
 ## Features
 
 ![](https://github.com/Umidjon-18/hope_button/blob/main/example/example_project/assets/sample.gif)
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+
 
 ```dart
 class MyHomePage extends StatefulWidget {
